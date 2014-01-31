@@ -1,20 +1,14 @@
 package net.webapp.controllers;
 
-import java.io.IOException;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/topic")
 public class Example {
-	@RequestMapping
-	public String index(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
-		resp.getWriter().println("ok");
-		return null;
+	@RequestMapping("/{id}")
+	public String index(@PathVariable int id) {
+		return "topic";
 	}
 }

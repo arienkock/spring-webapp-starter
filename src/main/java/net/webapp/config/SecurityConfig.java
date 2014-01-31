@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers(MvcConfig.resourcePatterns)
-				.anonymous().and().authorizeRequests().antMatchers("/**")
+				.permitAll().and().authorizeRequests().antMatchers("/**")
 				.authenticated().and().httpBasic();
 	}
 
