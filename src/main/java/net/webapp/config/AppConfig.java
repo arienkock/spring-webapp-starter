@@ -58,7 +58,6 @@ public class AppConfig {
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		logger.debug("Creating encoder");
 		return new StandardPasswordEncoder();
 	}
 }

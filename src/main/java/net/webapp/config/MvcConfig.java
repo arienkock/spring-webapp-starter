@@ -2,10 +2,13 @@ package net.webapp.config;
 
 import net.webapp.util.JsonViewResolver;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.web.accept.ContentNegotiationManager;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -23,6 +26,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class MvcConfig extends WebMvcConfigurerAdapter {
 	public static String[] resourcePatterns = new String[] { "/**/favicon.ico",
 			"/js/**", "/css/**", "/images/**" };
+	@Autowired
+	private Environment environment;
 
 	@Bean
 	public CookieLocaleResolver localeResolver() {
@@ -49,6 +54,14 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 		ContentNegotiatingViewResolver resolver = new ContentNegotiatingViewResolver();
 		resolver.setContentNegotiationManager(manager);
 		resolver.setOrder(1);
+		return resolver;
+	}
+
+	@Bean
+	public CommonsMultipartResolver multipartResolver() {
+		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+		resolver.setMaxUploadSize(environment.getProperty(
+				"webapp.config.maxUploadSize", Integer.class, 65536));
 		return resolver;
 	}
 
