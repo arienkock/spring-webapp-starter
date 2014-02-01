@@ -3,14 +3,15 @@ package net.webapp.util;
 import java.util.Locale;
 
 import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.AbstractCachingViewResolver;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
-public class JsonViewResolver implements ViewResolver {
-	public View resolveViewName(String viewName, Locale locale)
-			throws Exception {
+public class JsonViewResolver extends AbstractCachingViewResolver {
+
+	@Override
+	protected View loadView(String viewName, Locale locale) throws Exception {
 		MappingJackson2JsonView view = new MappingJackson2JsonView();
-		view.setPrettyPrint(true); // Lay the JSON out to be nicely readable
+		view.setPrettyPrint(true);
 		return view;
 	}
 }
