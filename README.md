@@ -9,12 +9,16 @@ __TODO:__
 * solr example
 * data layer example (jpa?, tinkerpop?)
 * message resolver
+* account creation/email validation (?)
+* email support
+* JSoup user content cleanup
 
-Done:
-* content negotiation view resolution
-* Optional storage
+__Done__:
+
+* content negotiation view resolution (html+json)
 * multipart support
 * basic security setup, csrf, placeholder authn
 * locale resolving
-* dev and prod logging setup with config reloading
+* dev and prod slf4j logging setup with config reloading
 * externalized config through environment and props file
+  
