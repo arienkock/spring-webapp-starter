@@ -10,7 +10,7 @@ import org.springframework.web.context.request.WebRequest;
 
 @Controller
 @RequestMapping("/topic")
-public class Example {
+public class TopicController {
 	@RequestMapping(value = "/{topicId}", method = RequestMethod.GET)
 	public String showTopic(WebRequest webRequest,
 			HttpServletResponse response, @PathVariable int topicId) {
@@ -21,12 +21,17 @@ public class Example {
 		return "topic";
 	}
 
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String showAllTopics() {
+		return "topic";
+	}
+
 	@RequestMapping(value = "/{topicId}", method = RequestMethod.PUT)
 	public String updateTopic(@PathVariable int topicId) {
 		return "topic";
 	}
 
-	@RequestMapping(value = "/{topicId}", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String createTopic(@PathVariable int topicId) {
 		return "topic";
 	}

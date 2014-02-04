@@ -12,10 +12,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
-import org.springframework.security.provisioning.UserDetailsManager;
 
 @Configuration
 @PropertySource("classpath:/app.properties")
@@ -24,10 +24,10 @@ public class AppConfig {
 	@Autowired
 	private Environment env;
 
-	@Profile("!test")
+	@Profile("test")
 	@Bean
-	public UserDetailsManager userDetailsManager() {
-		UserDetailsManager userDetailsManager = new UserDetailsManager() {
+	public UserDetailsService userDetailsManager() {
+		return new UserDetailsService() {
 			PasswordEncoder encoder = passwordEncoder();
 
 			@SuppressWarnings("unchecked")
@@ -36,24 +36,7 @@ public class AppConfig {
 				return new User(username, encoder.encode(username),
 						Collections.EMPTY_SET);
 			}
-
-			public boolean userExists(String username) {
-				return true;
-			}
-
-			public void updateUser(UserDetails user) {
-			}
-
-			public void deleteUser(String username) {
-			}
-
-			public void createUser(UserDetails user) {
-			}
-
-			public void changePassword(String oldPassword, String newPassword) {
-			}
 		};
-		return userDetailsManager;
 	}
 
 	@Bean

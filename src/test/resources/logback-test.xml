@@ -4,11 +4,13 @@
 		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
 			by default -->
 		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %C{5}\(%F:%L\) - %msg%n</pattern>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %C\(%F:%L\) - %msg%n %ex</pattern>
 		</encoder>
 	</appender>
 	
-	<logger name="org.springframework" level="ERROR" />
+	<logger name="org.springframework" level="INFO" />
+	<logger name="org.neo4j.kernel" level="ERROR" />
+	<logger name="net.bull.javamelody" level="INFO" />
 	
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
