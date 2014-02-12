@@ -12,6 +12,9 @@ __TODO:__
 * account creation/email validation (?)
 * email support
 * JSoup user content cleanup
+* change static content url location to avoid caching problems during version changes/releases
+* payment provider integration
+* setup for clustered environment (distributed sessions)
 
 __Done__:
 
