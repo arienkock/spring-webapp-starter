@@ -15,6 +15,8 @@ __TODO:__
 * change static content url location to avoid caching problems during version changes/releases
 * payment provider integration
 * setup for clustered environment (distributed sessions)
+* Add partial-update example handler method
+* integrate frontend build process (gulp)
 
 __Done__:
 
