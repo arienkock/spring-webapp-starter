@@ -15,6 +15,7 @@ The goal of this project is to serve as a base for "modern" Java web-application
 1. _Standalone application_: run on embedded container
 1. _TLS_: template config for using keystore
 1. _Clustering_: config to run N-node cluster with distributed datastore and Java session
+1. _Development lifecycle support_: Spring profiles, tasks for hot code/asset replacing
 
 __TODO:__
 
