@@ -17,6 +17,7 @@ The goal of this project is to serve as a base for "modern" Java web-application
 1. _Clustering_: config to run N-node cluster with distributed datastore and Java session
 1. _Development lifecycle support_: Spring profiles, tasks for hot code/asset replacing
 1. _Testing_: unit and integration testing setup
+1. _Logging_: pluggable logging SLF4J
 
 __TODO:__
 
