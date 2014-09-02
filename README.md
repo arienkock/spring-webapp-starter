@@ -24,11 +24,13 @@ The goal of this project is to serve as a base for "modern" Java web-application
     1. IP to Country mapping. Geolocation
     1. URL building/manipulation
     1. EMail: generic javamail support and rich email template
+    2. User-Agent detection to handle bots etc.
 
 __TODO:__
 
 * Social Auth
 * thymeleaf, jsp or mustache view resolvers
+* GZIP/deflate filter
 * [transparent HEAD support](http://axelfontaine.com/blog/http-head.html)
 * simple independent error pages
 * CRUD example + forms
