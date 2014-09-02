@@ -29,6 +29,7 @@ __TODO:__
 
 * Social Auth
 * thymeleaf, jsp or mustache view resolvers
+* [transparent HEAD support](http://axelfontaine.com/blog/http-head.html)
 * simple independent error pages
 * CRUD example + forms
 * multipart example
