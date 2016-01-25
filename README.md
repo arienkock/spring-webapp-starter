@@ -1,3 +1,5 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 # Starter Project
 The goal of this project is to serve as a base for "modern" Java web-applications with a Spring4 foundation. It contains example views, controllers and a data layer and attempts to address the following concerns by default:
 
